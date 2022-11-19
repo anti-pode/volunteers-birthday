@@ -1,18 +1,38 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import type { PropType } from "vue";
+import type { IItems } from "@/api/items.types";
 
 export default defineComponent({
   name: "AppCalendar",
+  props: {
+    items: {
+      type: Array as PropType<IItems[]>,
+      required: true,
+    },
+  },
   setup() {},
 });
 </script>
 
 <template>
   <section class="calendar">
-    <header class="calendar-header">
+    <header class="calendar__header">
       <h2>Рождественский</h2>
       <h3>адвент-календарь</h3>
     </header>
+
+    <div class="calendar__content">
+      <div class="calendar-items">
+        <div v-for="item in items" :key="item.id" class="calendar-item">
+          <img :src="item.icon" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar__footer-image">
+      <img src="/src/assets/icons/snow.svg" alt="" />
+    </div>
   </section>
 </template>
 
@@ -21,35 +41,74 @@ export default defineComponent({
 @import "@/assets/styles/colors";
 
 .calendar {
+  position: relative;
   width: 100%;
-  height: 500px;
   margin: 56px 0 40px 0;
   background: url("@/assets/icons/main-background.svg") no-repeat top center /
     100%;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    height: 300px;
+    width: 100vw;
+    background-color: #fff;
+    transform: translate(-50vw, 278px);
+    content: "";
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 185px;
+
+    h2 {
+      margin-bottom: 12px;
+      color: $color-primary;
+      font-family: $font-creative;
+      font-weight: 400;
+      font-size: 80px;
+      line-height: 100%;
+    }
+
+    h3 {
+      font-family: $font-title;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+  }
+
+  &__footer-image {
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 192px;
+  }
 }
 
-.calendar-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding-top: 185px;
+.calendar-items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 4px;
+}
 
-  h2 {
-    margin-bottom: 12px;
-    color: $color-primary;
-    font-family: $font-creative;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 100%;
-  }
-
-  h3 {
-    font-family: $font-title;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 100%;
-  }
+.calendar-item {
+  cursor: pointer;
 }
 </style>

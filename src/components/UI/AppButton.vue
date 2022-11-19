@@ -8,13 +8,23 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    href: {
+      type: String,
+      required: true,
+    },
   },
   setup() {},
 });
 </script>
 
 <template>
-  <button class="btn btn-primary">{{ text }}</button>
+  <a
+    :href="href"
+    class="btn btn-primary"
+    target="_blank"
+    rel="noreferrer nofollow"
+    >{{ text }}</a
+  >
 </template>
 
 <style lang="scss" scoped>
@@ -22,16 +32,18 @@ export default defineComponent({
 @import "@/assets/styles/colors";
 
 .btn {
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
+  margin: 0;
   padding: 16px 24px;
   border: 0;
   border-radius: 3px;
+  color: $color-text;
   background: $color-green;
   cursor: pointer;
   font-weight: 300;
   font-size: 18px;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     background: $color-green-hover;

@@ -1,11 +1,19 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import AppCalendar from "@/components/Calendar/AppCalendar.vue";
 import AppSection from "@/components/Section/Section.vue";
 import AppButton from "@/components/UI/AppButton.vue";
 
+import items from "@/api/items";
+
 export default defineComponent({
   components: { AppButton, AppSection, AppCalendar },
+  setup() {
+    return {
+      items,
+    };
+  },
 });
 </script>
 
@@ -40,15 +48,25 @@ export default defineComponent({
         </p>
       </AppSection>
 
-      <AppCalendar />
+      <AppCalendar :items="items" />
 
-      <AppButton text="Поддержать фонд" />
+      <AppButton text="Поддержать фонд" href="https://www.google.ru/" />
     </section>
   </div>
 </template>
 
 <style lang="scss">
 #app {
+  overflow: hidden;
   padding-bottom: 56px;
+
+  .container {
+    > .btn {
+      position: relative;
+      z-index: 3;
+      display: table;
+      margin: 0 auto;
+    }
+  }
 }
 </style>
