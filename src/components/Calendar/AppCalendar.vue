@@ -16,7 +16,9 @@ export default defineComponent({
   setup() {
     const activeModal: Ref<IPopup | null> = ref(null);
 
-    const setActiveModal = (item: IPopup) => {
+    const setActiveModal = (item: IPopup, isActive: boolean) => {
+      if (!isActive) return;
+
       activeModal.value = item;
     };
 
@@ -46,7 +48,7 @@ export default defineComponent({
           v-for="item in items"
           :key="item.id"
           :class="['calendar-item', { active: item.isActive }]"
-          @click="setActiveModal(item.popup)"
+          @click="setActiveModal(item.popup, item.isActive)"
         >
           <img :src="item.icon" alt="" />
         </div>
