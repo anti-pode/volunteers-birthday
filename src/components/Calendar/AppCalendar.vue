@@ -24,7 +24,11 @@ export default defineComponent({
 
     <div class="calendar__content">
       <div class="calendar-items">
-        <div v-for="item in items" :key="item.id" class="calendar-item">
+        <div
+          v-for="item in items"
+          :key="item.id"
+          :class="['calendar-item', { active: item.isActive }]"
+        >
           <img :src="item.icon" alt="" />
         </div>
       </div>
@@ -109,6 +113,28 @@ export default defineComponent({
 }
 
 .calendar-item {
+  position: relative;
   cursor: pointer;
+
+  &:not(.active) {
+    pointer-events: none;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+    content: "";
+  }
 }
 </style>

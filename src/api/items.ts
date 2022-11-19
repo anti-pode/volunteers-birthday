@@ -5,6 +5,7 @@ const items: IItems[] = [
   {
     id: 1,
     icon: "/src/assets/icons/calendar/15.svg",
+    isActive: true,
     popup: {
       id: 1,
       type: PopupTypes.Promo,
@@ -17,6 +18,7 @@ const items: IItems[] = [
   {
     id: 2,
     icon: "/src/assets/icons/calendar/16.svg",
+    isActive: true,
     popup: {
       id: 2,
       type: PopupTypes.Story,
@@ -31,6 +33,7 @@ const items: IItems[] = [
   {
     id: 3,
     icon: "/src/assets/icons/calendar/17.svg",
+    isActive: true,
     popup: {
       id: 3,
       type: PopupTypes.Promo,
@@ -43,6 +46,7 @@ const items: IItems[] = [
   {
     id: 4,
     icon: "/src/assets/icons/calendar/18.svg",
+    isActive: true,
     popup: {
       id: 4,
       type: PopupTypes.Story,
@@ -57,6 +61,7 @@ const items: IItems[] = [
   {
     id: 5,
     icon: "/src/assets/icons/calendar/19.svg",
+    isActive: true,
     popup: {
       id: 5,
       type: PopupTypes.Promo,
@@ -69,6 +74,7 @@ const items: IItems[] = [
   {
     id: 6,
     icon: "/src/assets/icons/calendar/20.svg",
+    isActive: true,
     popup: {
       id: 6,
       type: PopupTypes.Story,
@@ -83,6 +89,7 @@ const items: IItems[] = [
   {
     id: 7,
     icon: "/src/assets/icons/calendar/21.svg",
+    isActive: true,
     popup: {
       id: 3,
       type: PopupTypes.Promo,
@@ -95,6 +102,7 @@ const items: IItems[] = [
   {
     id: 8,
     icon: "/src/assets/icons/calendar/22.svg",
+    isActive: true,
     popup: {
       id: 8,
       type: PopupTypes.Story,
@@ -109,6 +117,7 @@ const items: IItems[] = [
   {
     id: 9,
     icon: "/src/assets/icons/calendar/23.svg",
+    isActive: true,
     popup: {
       id: 9,
       type: PopupTypes.Promo,
@@ -121,6 +130,7 @@ const items: IItems[] = [
   {
     id: 10,
     icon: "/src/assets/icons/calendar/24.svg",
+    isActive: true,
     popup: {
       id: 10,
       type: PopupTypes.Story,
@@ -135,6 +145,7 @@ const items: IItems[] = [
   {
     id: 11,
     icon: "/src/assets/icons/calendar/25.svg",
+    isActive: true,
     popup: {
       id: 11,
       type: PopupTypes.Promo,
@@ -147,6 +158,7 @@ const items: IItems[] = [
   {
     id: 12,
     icon: "/src/assets/icons/calendar/26.svg",
+    isActive: true,
     popup: {
       id: 12,
       type: PopupTypes.Story,
@@ -161,6 +173,7 @@ const items: IItems[] = [
   {
     id: 13,
     icon: "/src/assets/icons/calendar/27.svg",
+    isActive: true,
     popup: {
       id: 13,
       type: PopupTypes.Promo,
@@ -173,6 +186,7 @@ const items: IItems[] = [
   {
     id: 14,
     icon: "/src/assets/icons/calendar/28.svg",
+    isActive: true,
     popup: {
       id: 14,
       type: PopupTypes.Story,
@@ -187,6 +201,7 @@ const items: IItems[] = [
   {
     id: 15,
     icon: "/src/assets/icons/calendar/29.svg",
+    isActive: true,
     popup: {
       id: 15,
       type: PopupTypes.Promo,
@@ -199,6 +214,7 @@ const items: IItems[] = [
   {
     id: 16,
     icon: "/src/assets/icons/calendar/30.svg",
+    isActive: true,
     popup: {
       id: 16,
       type: PopupTypes.Story,
@@ -213,6 +229,7 @@ const items: IItems[] = [
   {
     id: 17,
     icon: "/src/assets/icons/calendar/31.svg",
+    isActive: true,
     popup: {
       id: 17,
       type: PopupTypes.Promo,
@@ -225,6 +242,7 @@ const items: IItems[] = [
   {
     id: 18,
     icon: "/src/assets/icons/calendar/1.svg",
+    isActive: true,
     popup: {
       id: 18,
       type: PopupTypes.Story,
@@ -239,6 +257,7 @@ const items: IItems[] = [
   {
     id: 19,
     icon: "/src/assets/icons/calendar/2.svg",
+    isActive: true,
     popup: {
       id: 19,
       type: PopupTypes.Promo,
@@ -251,6 +270,7 @@ const items: IItems[] = [
   {
     id: 20,
     icon: "/src/assets/icons/calendar/3.svg",
+    isActive: true,
     popup: {
       id: 20,
       type: PopupTypes.Story,
@@ -265,6 +285,7 @@ const items: IItems[] = [
   {
     id: 21,
     icon: "/src/assets/icons/calendar/4.svg",
+    isActive: true,
     popup: {
       id: 21,
       type: PopupTypes.Promo,
@@ -277,6 +298,7 @@ const items: IItems[] = [
   {
     id: 22,
     icon: "/src/assets/icons/calendar/5.svg",
+    isActive: true,
     popup: {
       id: 22,
       type: PopupTypes.Story,
@@ -291,6 +313,7 @@ const items: IItems[] = [
   {
     id: 23,
     icon: "/src/assets/icons/calendar/6.svg",
+    isActive: true,
     popup: {
       id: 23,
       type: PopupTypes.Promo,
@@ -303,6 +326,7 @@ const items: IItems[] = [
   {
     id: 24,
     icon: "/src/assets/icons/calendar/7.svg",
+    isActive: true,
     popup: {
       id: 24,
       type: PopupTypes.Story,
@@ -317,6 +341,7 @@ const items: IItems[] = [
   {
     id: 25,
     icon: "/src/assets/icons/calendar/8.svg",
+    isActive: false,
     popup: {
       id: 25,
       type: PopupTypes.Promo,

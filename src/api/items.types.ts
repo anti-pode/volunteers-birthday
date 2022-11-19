@@ -27,5 +27,6 @@ interface IStoryPopup extends IPopup {
 export interface IItems {
   id: number;
   icon: string;
+  isActive: boolean;
   popup: IPromoPopup | IStoryPopup;
 }
