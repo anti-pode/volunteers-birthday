@@ -1,17 +1,35 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import type { IItems } from "@/api/items.types";
+import { defineComponent, ref } from "vue";
+import type { PropType, Ref } from "vue";
+import type { IItem, IPopup } from "@/api/items.types";
+import AppBaseModal from "@/components/Modals/BaseModal.vue";
 
 export default defineComponent({
   name: "AppCalendar",
+  components: { AppBaseModal },
   props: {
     items: {
-      type: Array as PropType<IItems[]>,
+      type: Array as PropType<IItem[]>,
       required: true,
     },
   },
-  setup() {},
+  setup() {
+    const activeModal: Ref<IPopup | null> = ref(null);
+
+    const setActiveModal = (item: IPopup) => {
+      activeModal.value = item;
+    };
+
+    const clearActiveModal = () => {
+      activeModal.value = null;
+    };
+
+    return {
+      activeModal,
+      setActiveModal,
+      clearActiveModal,
+    };
+  },
 });
 </script>
 
@@ -28,11 +46,18 @@ export default defineComponent({
           v-for="item in items"
           :key="item.id"
           :class="['calendar-item', { active: item.isActive }]"
+          @click="setActiveModal(item.popup)"
         >
           <img :src="item.icon" alt="" />
         </div>
       </div>
     </div>
+
+    <teleport to="body"
+      ><AppBaseModal v-if="activeModal" @close="clearActiveModal">{{
+        activeModal.title
+      }}</AppBaseModal></teleport
+    >
 
     <div class="calendar__footer-image">
       <img src="/src/assets/icons/snow.svg" alt="" />

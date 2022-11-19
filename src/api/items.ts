@@ -1,7 +1,7 @@
-import type { IItems } from "@/api/items.types";
+import type { IItem } from "@/api/items.types";
 import { PopupTypes } from "@/api/items.types";
 
-const items: IItems[] = [
+const items: IItem[] = [
   {
     id: 1,
     icon: "/src/assets/icons/calendar/15.svg",

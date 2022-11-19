@@ -3,7 +3,7 @@ export const enum PopupTypes {
   Story,
 }
 
-interface IPopup {
+export interface IPopup {
   id: number;
 }
 
@@ -24,7 +24,7 @@ interface IStoryPopup extends IPopup {
   aboutLink: string;
 }
 
-export interface IItems {
+export interface IItem {
   id: number;
   icon: string;
   isActive: boolean;
