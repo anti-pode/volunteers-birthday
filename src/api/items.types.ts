@@ -25,25 +25,16 @@ interface IPersonalPopup extends IPopup {
   supportLink: string;
 }
 
-interface IStoryPopupBasic extends IPopup {
+interface IStoryPopup extends IPopup {
   type: PopupTypes.Story;
   tag: string;
   image?: string;
+  video?: string;
   text: string;
   hasSocialBlock: boolean;
-}
-
-interface IStoryPopupShare extends IStoryPopupBasic {
-  supportLink?: never;
+  supportLink?: string;
   shareUrl?: string;
 }
-
-interface IStoryPopupSupport extends IStoryPopupBasic {
-  supportLink: string;
-  shareUrl?: never;
-}
-
-type IStoryPopup = IStoryPopupShare | IStoryPopupSupport;
 
 export interface IItem {
   id: number;

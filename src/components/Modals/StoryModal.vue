@@ -21,6 +21,10 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    video: {
+      type: String,
+      default: "",
+    },
     text: {
       type: String,
       required: true,
@@ -46,8 +50,12 @@ export default defineComponent({
     <p class="story-popup__tag">{{ tag }}</p>
     <h3 class="story-popup__title">{{ title }}</h3>
 
-    <div class="story-popup__image">
+    <div v-if="image" class="story-popup__image">
       <img :src="image" alt="" />
+    </div>
+
+    <div v-if="video" class="story-popup__video">
+      <video :src="video" controls></video>
     </div>
 
     <section class="story-popup__text">
@@ -86,6 +94,16 @@ export default defineComponent({
     margin-bottom: 16px;
 
     img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    margin-bottom: 16px;
+
+    video {
       display: block;
       width: 100%;
     }
