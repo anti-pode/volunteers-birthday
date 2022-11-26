@@ -67,6 +67,7 @@ export default defineComponent({
   font-size: 18px;
   transition: background-color 0.3s ease;
   text-decoration: none;
+  text-align: center;
 
   span {
     color: $color-text;

@@ -1,4 +1,4 @@
-export const enum PopupTypes {
+export enum PopupTypes {
   Promo,
   Story,
   Personal,
@@ -6,11 +6,11 @@ export const enum PopupTypes {
 
 export interface IPopup {
   id: number;
+  title: string;
 }
 
 interface IPromoPopup extends IPopup {
   type: PopupTypes.Promo;
-  title: string;
   gift: string;
   code: string;
   link: string;
@@ -19,7 +19,6 @@ interface IPromoPopup extends IPopup {
 
 interface IPersonalPopup extends IPopup {
   type: PopupTypes.Personal;
-  title: string;
   image: string;
   text: string;
   author: string;
@@ -28,7 +27,6 @@ interface IPersonalPopup extends IPopup {
 
 interface IStoryPopupBasic extends IPopup {
   type: PopupTypes.Story;
-  title: string;
   image?: string;
   text: string;
   hasSocialBlock: boolean;

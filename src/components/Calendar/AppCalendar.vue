@@ -2,11 +2,13 @@
 import { defineComponent, ref } from "vue";
 import type { PropType, Ref } from "vue";
 import type { IItem, IPopup } from "@/api/items.types";
+import { PopupTypes } from "@/api/items.types";
 import AppBaseModal from "@/components/Modals/BaseModal.vue";
+import AppPromoModal from "@/components/Modals/PromoModal.vue";
 
 export default defineComponent({
   name: "AppCalendar",
-  components: { AppBaseModal },
+  components: { AppBaseModal, AppPromoModal },
   props: {
     items: {
       type: Array as PropType<IItem[]>,
@@ -27,6 +29,7 @@ export default defineComponent({
     };
 
     return {
+      PopupTypes,
       activeModal,
       setActiveModal,
       clearActiveModal,
@@ -55,9 +58,11 @@ export default defineComponent({
       </div>
     </div>
 
-    <teleport to="body"
-      ><AppBaseModal v-if="activeModal" @close="clearActiveModal">{{ activeModal.title }}</AppBaseModal></teleport
-    >
+    <teleport to="body">
+      <AppBaseModal v-if="activeModal" @close="clearActiveModal">
+        <AppPromoModal v-if="activeModal.type === PopupTypes.Promo" v-bind="activeModal" />
+      </AppBaseModal>
+    </teleport>
 
     <div class="calendar__footer-image">
       <img src="/src/assets/icons/snow.svg" alt="" />

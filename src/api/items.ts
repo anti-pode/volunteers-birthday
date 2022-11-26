@@ -10,7 +10,7 @@ const items: IItem[] = [
       id: 1,
       type: PopupTypes.Promo,
       title: "Вам подарок от ЛитРес!",
-      gift: "Книга из подборки и скидка 20% на каталог",
+      gift: "Друг фонда – книжный сервис ЛитРес дарит вам книгу из подборки и скидку 20% на каталог!",
       code: "ADVENT20",
       link: "https://www.google.ru/",
       description:
