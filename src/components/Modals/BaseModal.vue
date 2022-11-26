@@ -47,15 +47,15 @@ export default defineComponent({
   right: 0;
   bottom: 0;
   z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 40px 0;
   background-color: rgba(#000, 0.5);
+  overflow: hidden auto;
 }
 
 .popup {
   position: relative;
   width: 618px;
+  margin: 0 auto;
   padding: 32px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
