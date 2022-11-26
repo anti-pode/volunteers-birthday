@@ -52,9 +52,15 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
+@import "@/assets/styles/breakpoints";
+
 #app {
   overflow: hidden;
   padding-bottom: 56px;
+
+  @include --tablet {
+    padding-bottom: 43px;
+  }
 
   .container {
     > .btn {

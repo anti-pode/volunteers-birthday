@@ -28,10 +28,15 @@ export default defineComponent({
 <style lang="scss">
 @import "@/assets/styles/fonts";
 @import "@/assets/styles/colors";
+@import "@/assets/styles/breakpoints";
 
 .section {
   max-width: 768px;
   margin-top: 86px;
+
+  @include --tablet {
+    margin-top: 43px;
+  }
 
   &__title {
     margin-bottom: 32px;

@@ -49,9 +49,15 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
+@import "@/assets/styles/breakpoints";
+
 .app-header {
   padding: 32px 0;
   background-color: #fff;
+
+  @include --tablet {
+    padding: 24px 0;
+  }
 
   &__container {
     display: flex;

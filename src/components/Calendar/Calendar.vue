@@ -89,12 +89,17 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/styles/fonts";
 @import "@/assets/styles/colors";
+@import "@/assets/styles/breakpoints";
 
 .calendar {
   position: relative;
   width: 100%;
   margin: 56px 0 40px 0;
   background: url("@/assets/icons/main-background.svg") no-repeat top center / 100%;
+
+  @include --tablet {
+    margin: 40px 0 10px 0;
+  }
 
   &::after {
     position: absolute;
@@ -116,6 +121,10 @@ export default defineComponent({
     width: 100%;
     padding-top: 185px;
 
+    @include --tablet {
+      padding-top: 100px;
+    }
+
     h2 {
       margin-bottom: 12px;
       color: #11574f;
@@ -123,6 +132,11 @@ export default defineComponent({
       font-weight: 400;
       font-size: 80px;
       line-height: 100%;
+
+      @include --tablet {
+        font-weight: 400;
+        font-size: 48px;
+      }
     }
 
     h3 {
@@ -130,6 +144,11 @@ export default defineComponent({
       font-weight: 600;
       font-size: 40px;
       line-height: 100%;
+
+      @include --tablet {
+        font-weight: 600;
+        font-size: 24px;
+      }
     }
   }
 
@@ -139,6 +158,10 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     margin-top: 22px;
+
+    @include --tablet {
+      margin-top: 18px;
+    }
   }
 
   &__footer-image {
@@ -155,6 +178,11 @@ export default defineComponent({
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 4px;
+  padding: 0 60px;
+
+  @include --mobile {
+    padding: 0;
+  }
 }
 
 .calendar-item {
