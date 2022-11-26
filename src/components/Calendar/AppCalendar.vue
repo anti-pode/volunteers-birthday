@@ -56,9 +56,7 @@ export default defineComponent({
     </div>
 
     <teleport to="body"
-      ><AppBaseModal v-if="activeModal" @close="clearActiveModal">{{
-        activeModal.title
-      }}</AppBaseModal></teleport
+      ><AppBaseModal v-if="activeModal" @close="clearActiveModal">{{ activeModal.title }}</AppBaseModal></teleport
     >
 
     <div class="calendar__footer-image">
@@ -75,8 +73,7 @@ export default defineComponent({
   position: relative;
   width: 100%;
   margin: 56px 0 40px 0;
-  background: url("@/assets/icons/main-background.svg") no-repeat top center /
-    100%;
+  background: url("@/assets/icons/main-background.svg") no-repeat top center / 100%;
 
   &::after {
     position: absolute;
@@ -100,7 +97,7 @@ export default defineComponent({
 
     h2 {
       margin-bottom: 12px;
-      color: $color-primary;
+      color: #11574f;
       font-family: $font-creative;
       font-weight: 400;
       font-size: 80px;
