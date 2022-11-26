@@ -3,10 +3,11 @@ import { defineComponent } from "vue";
 import AppButton from "@/components/UI/Button.vue";
 import AppTextContent from "@/components/UI/TextConent.vue";
 import AppSocials from "@/components/UI/Socials.vue";
+import AppShareButton from "@/components/UI/ShareButton.vue";
 
 export default defineComponent({
   name: "AppStoryModal",
-  components: { AppSocials, AppTextContent, AppButton },
+  components: { AppShareButton, AppSocials, AppTextContent, AppButton },
   props: {
     tag: {
       type: String,
@@ -57,8 +58,9 @@ export default defineComponent({
       <AppSocials />
     </section>
 
-    <div class="story-popup__button">
-      <AppButton text="Поддержать фонд" :href="supportLink" />
+    <div v-if="supportLink || shareUrl" class="story-popup__button">
+      <AppButton v-if="supportLink" text="Поддержать фонд" :href="supportLink" />
+      <AppShareButton v-else-if="shareUrl" :share-url="shareUrl" />
     </div>
   </article>
 </template>
