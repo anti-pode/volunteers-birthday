@@ -2,59 +2,78 @@
 import { defineComponent } from "vue";
 import AppButton from "@/components/UI/Button.vue";
 import AppTextContent from "@/components/UI/TextConent.vue";
+import AppSocials from "@/components/UI/Socials.vue";
 
 export default defineComponent({
-  name: "AppPersonalModal",
-  components: { AppTextContent, AppButton },
+  name: "AppStoryModal",
+  components: { AppSocials, AppTextContent, AppButton },
   props: {
+    tag: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
     },
     image: {
       type: String,
-      required: true,
+      default: "",
     },
     text: {
       type: String,
       required: true,
     },
-    author: {
-      type: String,
-      required: true,
+    hasSocialBlock: {
+      type: Boolean,
+      default: false,
     },
     supportLink: {
       type: String,
-      required: true,
+      default: "",
+    },
+    shareUrl: {
+      type: String,
+      default: "",
     },
   },
 });
 </script>
 
 <template>
-  <article class="personal-popup">
-    <h3 class="personal-popup__title">{{ title }}</h3>
+  <article class="story-popup">
+    <p class="story-popup__tag">{{ tag }}</p>
+    <h3 class="story-popup__title">{{ title }}</h3>
 
-    <div class="personal-popup__image">
+    <div class="story-popup__image">
       <img :src="image" alt="" />
     </div>
 
-    <section class="personal-popup__text">
+    <section class="story-popup__text">
       <AppTextContent :text="text" />
     </section>
 
-    <div class="personal-popup__author">{{ author }}</div>
+    <section class="story-popup__socials">
+      <AppSocials />
+    </section>
 
-    <div class="personal-popup__button">
+    <div class="story-popup__button">
       <AppButton text="Поддержать фонд" :href="supportLink" />
     </div>
   </article>
 </template>
 
 <style lang="scss" scoped>
-.personal-popup {
+.story-popup {
+  &__tag {
+    margin: 0 0 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
   &__title {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
     font-weight: 600;
     font-size: 32px;
     line-height: 36px;

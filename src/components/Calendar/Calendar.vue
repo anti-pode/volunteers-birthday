@@ -6,10 +6,11 @@ import { PopupTypes } from "@/api/items.types";
 import AppBaseModal from "@/components/Modals/BaseModal.vue";
 import AppPromoModal from "@/components/Modals/PromoModal.vue";
 import AppPersonalModal from "@/components/Modals/PersonalModal.vue";
+import AppStoryModal from "@/components/Modals/StoryModal.vue";
 
 export default defineComponent({
   name: "AppCalendar",
-  components: { AppPersonalModal, AppBaseModal, AppPromoModal },
+  components: { AppPersonalModal, AppBaseModal, AppPromoModal, AppStoryModal },
   props: {
     items: {
       type: Array as PropType<IItem[]>,
@@ -35,6 +36,8 @@ export default defineComponent({
           return "AppPromoModal";
         case PopupTypes.Personal:
           return "AppPersonalModal";
+        case PopupTypes.Story:
+          return "AppStoryModal";
         default:
           return "";
       }

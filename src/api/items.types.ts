@@ -27,6 +27,7 @@ interface IPersonalPopup extends IPopup {
 
 interface IStoryPopupBasic extends IPopup {
   type: PopupTypes.Story;
+  tag: string;
   image?: string;
   text: string;
   hasSocialBlock: boolean;
