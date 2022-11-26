@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import AppButton from "@/components/UI/AppButton.vue";
+import AppButton from "@/components/UI/Button.vue";
 
 export default defineComponent({
   name: "AppPromoModal",
@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="promo-popup">
+  <article class="promo-popup">
     <header class="promo-popup__header">
       <img src="/src/assets/icons/gift.svg" alt="" />
 
@@ -62,7 +62,7 @@ export default defineComponent({
 
       <div v-if="description" class="promo-popup__description">{{ description }}</div>
     </div>
-  </section>
+  </article>
 </template>
 
 <style lang="scss" scoped>

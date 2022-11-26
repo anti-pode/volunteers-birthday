@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import AppButton, { ButtonTypes, ButtonSizes, ButtonColors } from "@/components/UI/AppButton.vue";
+import AppButton, { ButtonTypes, ButtonSizes, ButtonColors } from "@/components/UI/Button.vue";
 
 export default defineComponent({
   name: "AppHeader",

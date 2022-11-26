@@ -5,10 +5,11 @@ import type { IItem, IPopup } from "@/api/items.types";
 import { PopupTypes } from "@/api/items.types";
 import AppBaseModal from "@/components/Modals/BaseModal.vue";
 import AppPromoModal from "@/components/Modals/PromoModal.vue";
+import AppPersonalModal from "@/components/Modals/PersonalModal.vue";
 
 export default defineComponent({
   name: "AppCalendar",
-  components: { AppBaseModal, AppPromoModal },
+  components: { AppPersonalModal, AppBaseModal, AppPromoModal },
   props: {
     items: {
       type: Array as PropType<IItem[]>,
@@ -28,11 +29,23 @@ export default defineComponent({
       activeModal.value = null;
     };
 
+    const getModalByType = (type: PopupTypes): string => {
+      switch (type) {
+        case PopupTypes.Promo:
+          return "AppPromoModal";
+        case PopupTypes.Personal:
+          return "AppPersonalModal";
+        default:
+          return "";
+      }
+    };
+
     return {
       PopupTypes,
       activeModal,
       setActiveModal,
       clearActiveModal,
+      getModalByType,
     };
   },
 });
@@ -60,7 +73,7 @@ export default defineComponent({
 
     <teleport to="body">
       <AppBaseModal v-if="activeModal" @close="clearActiveModal">
-        <AppPromoModal v-if="activeModal.type === PopupTypes.Promo" v-bind="activeModal" />
+        <component :is="getModalByType(activeModal.type)" v-bind="activeModal" />
       </AppBaseModal>
     </teleport>
 

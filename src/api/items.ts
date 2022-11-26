@@ -331,7 +331,7 @@ const items: IItem[] = [
   {
     id: 25,
     icon: "/src/assets/icons/calendar/8.svg",
-    isActive: false,
+    isActive: true,
     popup: {
       id: 25,
       type: PopupTypes.Personal,

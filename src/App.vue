@@ -1,10 +1,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import AppCalendar from "@/components/Calendar/AppCalendar.vue";
+import AppCalendar from "@/components/Calendar/Calendar.vue";
 import AppSection from "@/components/Section/Section.vue";
-import AppButton from "@/components/UI/AppButton.vue";
-import AppHeader from "@/components/Section/AppHeader.vue";
+import AppButton from "@/components/UI/Button.vue";
+import AppHeader from "@/components/Section/Header.vue";
 
 import items from "@/api/items";
 
