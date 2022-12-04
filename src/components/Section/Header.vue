@@ -59,6 +59,10 @@ export default defineComponent({
     padding: 24px 0;
   }
 
+  @include --mobile {
+    padding: 12px 0;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -85,12 +89,20 @@ export default defineComponent({
 
     span {
       font-size: 20px;
+
+      @include --mobile {
+        font-size: 16px;
+      }
     }
   }
 
   &__controls {
     display: flex;
     column-gap: 8px;
+
+    @include --mobile {
+      display: none;
+    }
   }
 }
 </style>

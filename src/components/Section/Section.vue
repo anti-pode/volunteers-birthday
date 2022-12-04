@@ -38,14 +38,26 @@ export default defineComponent({
     margin-top: 43px;
   }
 
+  @include --mobile {
+    margin-top: 32px;
+  }
+
   &__title {
     margin-bottom: 32px;
+
+    @include --mobile {
+      margin-bottom: 16px;
+    }
 
     h1 {
       font-family: $font-title;
       font-weight: 700;
       font-size: 72px;
       line-height: 1;
+
+      @include --mobile {
+        font-size: 32px;
+      }
     }
   }
 
@@ -61,6 +73,10 @@ export default defineComponent({
 
       &:not(:last-child) {
         margin-bottom: 12px;
+
+        @include --mobile {
+          margin-bottom: 8px;
+        }
       }
     }
   }

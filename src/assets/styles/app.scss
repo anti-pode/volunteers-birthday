@@ -8,6 +8,11 @@ body {
   background-color: $app-background;
   font-family: $font-main;
   color: $color-text;
+  font-size: 16px;
+
+  @include --mobile {
+    font-size: 14px;
+  }
 
   &.overflow-hidden {
     overflow: hidden;

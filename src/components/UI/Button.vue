@@ -54,6 +54,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/styles/fonts";
 @import "@/assets/styles/colors";
+@import "@/assets/styles/breakpoints";
 
 .btn {
   display: inline-block;
@@ -125,5 +126,12 @@ export default defineComponent({
 .btn-md {
   padding: 16px 24px;
   font-size: 18px;
+
+  @include --mobile-sm {
+    width: 100%;
+    padding: 11px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
 }
 </style>

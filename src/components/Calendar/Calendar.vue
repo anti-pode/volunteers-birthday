@@ -104,6 +104,12 @@ export default defineComponent({
 
   @include --tablet {
     margin: 40px 0 10px 0;
+    background-image: url("@/assets/icons/main-background-tablet.svg");
+  }
+
+  @include --mobile {
+    margin-bottom: 30px;
+    background-image: url("@/assets/icons/main-background-mobile.svg");
   }
 
   &::after {
@@ -116,6 +122,10 @@ export default defineComponent({
     background-color: #fff;
     transform: translate(-50vw, 278px);
     content: "";
+
+    @include --mobile-sm {
+      transform: translate(-50vw, 290px);
+    }
   }
 
   &__header {
@@ -127,7 +137,11 @@ export default defineComponent({
     padding-top: 185px;
 
     @include --tablet {
-      padding-top: 100px;
+      padding-top: 15vw;
+    }
+
+    @include --mobile-sm {
+      padding-top: 54px;
     }
 
     h2 {
@@ -139,8 +153,16 @@ export default defineComponent({
       line-height: 100%;
 
       @include --tablet {
-        font-weight: 400;
         font-size: 48px;
+      }
+
+      @include --mobile {
+        margin-bottom: 4px;
+        font-size: 34px;
+      }
+
+      @include --mobile-sm {
+        font-size: 28px;
       }
     }
 
@@ -151,8 +173,15 @@ export default defineComponent({
       line-height: 100%;
 
       @include --tablet {
-        font-weight: 600;
         font-size: 24px;
+      }
+
+      @include --mobile {
+        font-size: 20px;
+      }
+
+      @include --mobile-sm {
+        font-size: 16px;
       }
     }
   }
@@ -176,6 +205,14 @@ export default defineComponent({
     z-index: 2;
     width: 100%;
     height: 192px;
+
+    @include --mobile {
+      bottom: -160px;
+    }
+
+    @include --mobile-sm {
+      bottom: -180px;
+    }
   }
 }
 
@@ -185,14 +222,28 @@ export default defineComponent({
   grid-gap: 4px;
   padding: 0 60px;
 
+  @include --tablet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   @include --mobile {
-    padding: 0;
+    padding: 0 20px;
+  }
+
+  @include --mobile-sm {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .calendar-item {
   position: relative;
   cursor: pointer;
+
+  @include --tablet {
+    &:last-child {
+      display: none;
+    }
+  }
 
   &:not(.active) {
     pointer-events: none;
