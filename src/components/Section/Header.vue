@@ -1,13 +1,23 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import AppButton, { ButtonTypes, ButtonSizes, ButtonColors } from "@/components/UI/Button.vue";
+import AppBurger from "@/components/Section/Burger.vue";
+import AppMobileMenu from "@/components/Section/MobileMenu.vue";
 
 export default defineComponent({
   name: "AppHeader",
-  components: { AppButton },
+  components: { AppMobileMenu, AppBurger, AppButton },
   setup() {
+    const isMobileMenuOpened = ref(false);
+
+    const toggleMobileMenu = () => {
+      isMobileMenuOpened.value = !isMobileMenuOpened.value;
+    };
+
     return {
+      toggleMobileMenu,
+      isMobileMenuOpened,
       ButtonTypes: ButtonTypes,
       ButtonSizes: ButtonSizes,
       ButtonColors: ButtonColors,
@@ -44,13 +54,18 @@ export default defineComponent({
           :type="ButtonTypes.Outline"
         />
       </div>
+
+      <div class="app-header__burger">
+        <AppBurger @click="toggleMobileMenu" :is-open="true" />
+      </div>
     </section>
+
+    <AppMobileMenu :is-active="isMobileMenuOpened" @close="toggleMobileMenu" />
   </header>
 </template>
 
 <style lang="scss">
 @import "@/assets/styles/breakpoints";
-
 .app-header {
   padding: 32px 0;
   background-color: #fff;
@@ -101,6 +116,16 @@ export default defineComponent({
     column-gap: 8px;
 
     @include --mobile {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    align-items: center;
+    color: #fff;
+
+    @include --from-mobile {
       display: none;
     }
   }
