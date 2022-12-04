@@ -43,12 +43,17 @@ export default defineComponent({
       }
     };
 
+    const imagePath = (number: string): string => {
+      return `/src/assets/icons/calendar/${number}.svg`;
+    };
+
     return {
       PopupTypes,
       activeModal,
       setActiveModal,
       clearActiveModal,
       getModalByType,
+      imagePath,
     };
   },
 });
@@ -69,7 +74,7 @@ export default defineComponent({
           :class="['calendar-item', { active: item.isActive }]"
           @click="setActiveModal(item.popup, item.isActive)"
         >
-          <img :src="item.icon" alt="" />
+          <img :src="imagePath(item.icon)" alt="" />
         </div>
       </div>
     </div>
