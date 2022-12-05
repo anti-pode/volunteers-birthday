@@ -55,7 +55,7 @@ export default defineComponent({
     </div>
 
     <div v-if="video" class="story-popup__video">
-      <video :src="video" controls></video>
+      <iframe :src="`https://www.youtube.com/embed/${video}?autoplay=1`" allowfullscreen />
     </div>
 
     <section class="story-popup__text">
@@ -100,12 +100,17 @@ export default defineComponent({
   }
 
   &__video {
+    position: relative;
     width: 100%;
     margin-bottom: 16px;
+    padding-bottom: 56.2%;
 
-    video {
+    iframe {
+      position: absolute;
       display: block;
       width: 100%;
+      height: 100%;
+      border: 0;
     }
   }
 
