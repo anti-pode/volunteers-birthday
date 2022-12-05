@@ -40,6 +40,8 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/breakpoints";
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -60,6 +62,12 @@ export default defineComponent({
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
+
+  @include --mobile {
+    width: 90%;
+    max-width: 600px;
+    padding: 16px;
+  }
 
   &__close {
     position: absolute;

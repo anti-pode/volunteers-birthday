@@ -66,6 +66,8 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/breakpoints";
+
 .promo-popup {
   &__header {
     display: flex;
@@ -84,6 +86,11 @@ export default defineComponent({
     font-weight: 600;
     font-size: 32px;
     line-height: 36px;
+
+    @include --mobile {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__info {
@@ -92,6 +99,11 @@ export default defineComponent({
     font-size: 16px;
     line-height: 150%;
     text-align: center;
+
+    @include --mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
   }
 
   &__code {
@@ -106,11 +118,22 @@ export default defineComponent({
     font-size: 28px;
     line-height: 36px;
 
+    @include --mobile {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
     img {
       width: 24px;
       height: 24px;
       margin-left: 8px;
       cursor: pointer;
+
+      @include --mobile {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
@@ -126,6 +149,10 @@ export default defineComponent({
     font-size: 12px;
     line-height: 150%;
     text-align: center;
+
+    @include --mobile {
+      margin-top: 16px;
+    }
   }
 }
 </style>

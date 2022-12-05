@@ -52,17 +52,25 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/breakpoints";
+
 .personal-popup {
   &__title {
     margin-bottom: 8px;
+    padding-right: 30px;
     font-weight: 600;
     font-size: 32px;
     line-height: 36px;
+
+    @include --mobile {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__image {
     width: 100%;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
 
     img {
       display: block;
@@ -77,6 +85,10 @@ export default defineComponent({
     font-size: 16px;
     line-height: 140%;
     color: #7e7e7e;
+
+    @include --mobile {
+      font-size: 14px;
+    }
   }
 
   &__button {

@@ -54,8 +54,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .share {
+  margin-bottom: 12px;
+
   &__text {
     margin: 0 0 8px;
+    font-size: 16px;
   }
 
   ::v-deep(.ya-share2) {

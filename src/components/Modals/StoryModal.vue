@@ -74,12 +74,18 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/breakpoints";
+
 .story-popup {
   &__tag {
     margin: 0 0 8px;
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
+
+    @include --mobile {
+      font-size: 14px;
+    }
   }
 
   &__title {
@@ -87,6 +93,11 @@ export default defineComponent({
     font-weight: 600;
     font-size: 32px;
     line-height: 36px;
+
+    @include --mobile {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__image {
@@ -112,15 +123,6 @@ export default defineComponent({
       height: 100%;
       border: 0;
     }
-  }
-
-  &__author {
-    margin-top: 8px;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    color: #7e7e7e;
   }
 
   &__button {
