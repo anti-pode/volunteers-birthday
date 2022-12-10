@@ -13,7 +13,7 @@ export default defineComponent({
     },
     image: {
       type: String,
-      required: true,
+      default: "",
     },
     text: {
       type: String,
