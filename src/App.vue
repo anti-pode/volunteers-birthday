@@ -1,16 +1,29 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
 import AppCalendar from "@/components/Calendar/Calendar.vue";
 import AppSection from "@/components/Section/Section.vue";
 import AppButton from "@/components/UI/Button.vue";
 import AppHeader from "@/components/Section/Header.vue";
 
-import items from "@/api/items";
+// import mockItems from "@/api/items";
+import type { IItem } from "@/api/items.types";
 
 export default defineComponent({
   components: { AppButton, AppSection, AppCalendar, AppHeader },
   setup() {
+    const items = ref<IItem[] | null>(null);
+
+    onMounted(async () => {
+      const _items = await fetch("https://otkazniki.ru/api/advent/", {
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+      });
+
+      items.value = await _items.json();
+    });
+
     return {
       items,
     };
@@ -44,7 +57,7 @@ export default defineComponent({
         </p>
       </AppSection>
 
-      <AppCalendar :items="items" />
+      <AppCalendar v-if="items?.length > 0" :items="items" />
 
       <AppButton text="Поддержать фонд" href="https://www.google.ru/" />
     </section>

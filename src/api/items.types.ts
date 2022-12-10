@@ -19,7 +19,7 @@ interface IPromoPopup extends IPopup {
 
 interface IPersonalPopup extends IPopup {
   type: PopupTypes.Personal;
-  image: string;
+  image?: string | null;
   text: string;
   author: string;
   supportLink: string;
@@ -28,12 +28,12 @@ interface IPersonalPopup extends IPopup {
 interface IStoryPopup extends IPopup {
   type: PopupTypes.Story;
   tag: string;
-  image?: string;
-  video?: string;
+  image?: string | null;
+  video?: string | null;
   text: string;
   hasSocialBlock: boolean;
-  supportLink?: string;
-  shareUrl?: string;
+  supportLink?: string | null;
+  shareUrl?: string | null;
 }
 
 export interface IItem {
