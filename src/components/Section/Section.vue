@@ -31,11 +31,37 @@ export default defineComponent({
 @import "@/assets/styles/breakpoints";
 
 .section {
-  max-width: 768px;
+  position: relative;
   margin-top: 86px;
+  padding: 0 30px;
+
+  &::before {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+    max-width: 1366px;
+    transform: translate(-50%, 0);
+    background: url("@/assets/icons/background/stars1.png") no-repeat top center / 100%;
+    content: "";
+
+    @include --tablet {
+      top: 0;
+      background-image: url("@/assets/icons/background/stars1-tablet.png");
+    }
+
+    @include --mobile {
+      top: 32px;
+      height: 252px;
+      background-image: url("@/assets/icons/background/stars1-mobile.png");
+    }
+  }
 
   @include --tablet {
     margin-top: 43px;
+    padding: 0;
   }
 
   @include --mobile {
@@ -43,6 +69,7 @@ export default defineComponent({
   }
 
   &__title {
+    max-width: 768px;
     margin-bottom: 32px;
 
     @include --mobile {
@@ -62,6 +89,7 @@ export default defineComponent({
   }
 
   &__content {
+    max-width: 768px;
     font-weight: 300;
 
     b {

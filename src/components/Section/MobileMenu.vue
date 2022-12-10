@@ -136,7 +136,7 @@ export default defineComponent({
     align-items: center;
     color: $color-text;
     text-decoration: none;
-    font-family: $font-creative, Arial, sans-serif;
+    font-family: $font-menu;
     font-weight: 400;
     font-size: 28px;
 

@@ -128,6 +128,31 @@ export default defineComponent({
     }
   }
 
+  &::before {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    z-index: 2;
+    width: 100vw;
+    height: 100%;
+    max-width: 1366px;
+    transform: translate(-50%, 0);
+    background: url("@/assets/icons/background/stars2.png") no-repeat top center / 100%;
+    pointer-events: none;
+    content: "";
+
+    @include --tablet {
+      top: 0;
+      background-image: url("@/assets/icons/background/stars2-tablet.png");
+    }
+
+    @include --mobile {
+      top: 32px;
+      height: 252px;
+      background-image: url("@/assets/icons/background/stars2-mobile.png");
+    }
+  }
+
   &__header {
     display: flex;
     flex-direction: column;

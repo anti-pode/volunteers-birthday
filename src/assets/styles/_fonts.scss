@@ -17,6 +17,10 @@
 @include font('Proxima', 'Proxima', 300);
 @include font('Proxima', 'Proxima', 400);
 
+@include font('Amatic', 'Amatic', 400);
+@include font('Amatic', 'Amatic', 600);
+
 $font-main: 'Proxima', 'Arial', sans-serif !default;
 $font-title: 'Gilroy', 'Arial', sans-serif !default;
 $font-creative: 'Lemon', 'Arial', sans-serif !default;
+$font-menu: 'Amatic', 'Arial', sans-serif !default;
