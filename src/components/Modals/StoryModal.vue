@@ -60,6 +60,7 @@ export default defineComponent({
 
     <section class="story-popup__text">
       <AppTextContent :text="text" />
+      <AppTextContent :text="text" />
     </section>
 
     <section class="story-popup__socials">
