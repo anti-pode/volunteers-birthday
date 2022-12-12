@@ -44,7 +44,7 @@ export default defineComponent({
     };
 
     const imagePath = (number: string): string => {
-      return `/src/assets/icons/calendar/${number}.svg`;
+      return new URL(`/src/assets/icons/calendar/${number}.svg`, import.meta.url).href;
     };
 
     return {
