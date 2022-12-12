@@ -1,21 +1,12 @@
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
-import type { Ref } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "AppBaseModal",
   emits: ["close"],
   setup(_, ctx) {
-    const body: Ref<HTMLElement | null> = ref(null);
-
-    onMounted(() => {
-      body.value = document.body;
-      body.value?.classList.add("overflow-hidden");
-    });
-
     const closePopup = () => {
       ctx.emit("close");
-      body.value?.classList.remove("overflow-hidden");
     };
 
     return {
@@ -26,7 +17,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="popup-overlay" @click="closePopup">
+  <section class="popup-overlay" @click="closePopup" @scroll.stop @wheel.prevent @touchmove.prevent>
     <div class="popup" @click.stop>
       <button class="popup__close" @click="closePopup">
         <img src="@/assets/icons/close.svg" alt="" />
