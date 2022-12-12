@@ -7,27 +7,27 @@ export default defineComponent({
     const socials = [
       {
         name: "vk",
-        icon: "/src/assets/icons/socials/vk.svg",
+        icon: new URL(`/src/assets/icons/socials/vk.svg`, import.meta.url).href,
         link: "https://vk.com/otkaznikiru",
       },
       {
         name: "tg",
-        icon: "/src/assets/icons/socials/tg.svg",
+        icon: new URL(`/src/assets/icons/socials/tg.svg`, import.meta.url).href,
         link: "https://t.me/otkazniki",
       },
       {
         name: "ok",
-        icon: "/src/assets/icons/socials/ok.svg",
+        icon: new URL(`/src/assets/icons/socials/ok.svg`, import.meta.url).href,
         link: "https://ok.ru/bfotkaznikiru",
       },
       {
         name: "yt",
-        icon: "/src/assets/icons/socials/yt.svg",
+        icon: new URL(`/src/assets/icons/socials/yt.svg`, import.meta.url).href,
         link: "https://www.youtube.com/user/otkazniki/videos",
       },
       {
         name: "yd",
-        icon: "/src/assets/icons/socials/yd.svg",
+        icon: new URL(`/src/assets/icons/socials/yd.svg`, import.meta.url).href,
         link: "https://dzen.ru/id/5cb4865f24122700afbddb59",
       },
     ];
