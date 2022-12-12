@@ -5,6 +5,7 @@ export enum PopupTypes {
 }
 
 export interface IPopup {
+  type: PopupTypes;
   id: number;
   title: string;
 }

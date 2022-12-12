@@ -29,7 +29,7 @@ export default defineComponent({
   <section class="popup-overlay" @click="closePopup">
     <div class="popup" @click.stop>
       <button class="popup__close" @click="closePopup">
-        <img src="src/assets/icons/close.svg" alt="" />
+        <img src="@/assets/icons/close.svg" alt="" />
       </button>
 
       <div class="popup__content">

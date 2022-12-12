@@ -57,7 +57,7 @@ export default defineComponent({
         </p>
       </AppSection>
 
-      <AppCalendar v-if="items?.length > 0" :items="items" />
+      <AppCalendar v-if="items && items.length > 0" :items="items" />
 
       <AppButton text="Поддержать фонд" href="https://www.google.ru/" />
     </section>
