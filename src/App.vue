@@ -12,6 +12,7 @@ import type { IItem } from "@/api/items.types";
 export default defineComponent({
   components: { AppButton, AppSection, AppCalendar, AppHeader },
   setup() {
+    const { VITE_SUPPORT_LINK } = import.meta.env;
     const items = ref<IItem[] | null>(null);
 
     onMounted(async () => {
@@ -26,6 +27,7 @@ export default defineComponent({
 
     return {
       items,
+      VITE_SUPPORT_LINK,
     };
   },
 });
@@ -59,7 +61,7 @@ export default defineComponent({
 
       <AppCalendar v-if="items && items.length > 0" :items="items" />
 
-      <AppButton text="Поддержать фонд" href="https://www.google.ru/" />
+      <AppButton text="Поддержать фонд" :href="VITE_SUPPORT_LINK" />
     </section>
   </div>
 </template>

@@ -9,6 +9,7 @@ export default defineComponent({
   name: "AppHeader",
   components: { AppMobileMenu, AppBurger, AppButton },
   setup() {
+    const { VITE_SUPPORT_LINK, VITE_VOLUNTEERS_LINK } = import.meta.env;
     const isMobileMenuOpened = ref(false);
 
     const toggleMobileMenu = () => {
@@ -21,6 +22,8 @@ export default defineComponent({
       ButtonTypes: ButtonTypes,
       ButtonSizes: ButtonSizes,
       ButtonColors: ButtonColors,
+      VITE_SUPPORT_LINK,
+      VITE_VOLUNTEERS_LINK,
     };
   },
 });
@@ -42,13 +45,13 @@ export default defineComponent({
       <div class="app-header__controls">
         <AppButton
           text="Поддержать фонд"
-          href="https://www.google.ru/"
+          :href="VITE_SUPPORT_LINK"
           :color="ButtonColors.Secondary"
           :size="ButtonSizes.Small"
         />
         <AppButton
           text="Стать волонтером"
-          href="https://www.google.ru/"
+          :href="VITE_VOLUNTEERS_LINK"
           :color="ButtonColors.Secondary"
           :size="ButtonSizes.Small"
           :type="ButtonTypes.Outline"

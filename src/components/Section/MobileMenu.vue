@@ -15,6 +15,7 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
+    const { VITE_SUPPORT_LINK, VITE_VOLUNTEERS_LINK } = import.meta.env;
     const body: Ref<HTMLElement | null> = ref(null);
 
     onMounted(() => {
@@ -35,6 +36,8 @@ export default defineComponent({
 
     return {
       closeMobileMenu,
+      VITE_SUPPORT_LINK,
+      VITE_VOLUNTEERS_LINK,
     };
   },
 });
@@ -54,13 +57,13 @@ export default defineComponent({
       </header>
 
       <nav class="app-mobile-menu__content">
-        <a href="#" class="app-mobile-menu__link">
+        <a :href="VITE_SUPPORT_LINK" class="app-mobile-menu__link" target="_blank" rel="noreferrer nofollow">
           <img src="/src/assets/icons/arrow-btn-primary.svg" alt="" />
 
           <span>Поддержать фонд</span>
         </a>
 
-        <a href="#" class="app-mobile-menu__link">
+        <a :href="VITE_VOLUNTEERS_LINK" class="app-mobile-menu__link" target="_blank" rel="noreferrer nofollow">
           <img src="/src/assets/icons/arrow-btn-accent.svg" alt="" />
 
           <span>Стать волонтером</span>

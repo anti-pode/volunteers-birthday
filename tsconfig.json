@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "isolatedModules": false,
+    "types": ["vite/client"],
     "paths": {
       "@/*": ["./src/*"]
     }
