@@ -76,6 +76,11 @@ export default defineComponent({
         >
           <img :src="imagePath(item.icon)" alt="" />
         </div>
+
+        <!-- Статичный блок, для кратного 5 количества карточек, отображается только на десктопе -->
+        <div class="calendar-item active extra">
+          <img src="@/assets/icons/calendar/8.svg" alt="" />
+        </div>
       </div>
     </div>
 
@@ -264,8 +269,10 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 
-  @include --tablet {
-    &:last-child {
+  &.extra {
+    cursor: default;
+
+    @include --tablet {
       display: none;
     }
   }
