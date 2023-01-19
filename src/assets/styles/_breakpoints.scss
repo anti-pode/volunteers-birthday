@@ -6,6 +6,12 @@ $mobile-sm: 425px;
 $from_tablet: #{$tablet + 1px};
 $from_mobile: #{$mobile + 1px};
 
+@mixin --custom($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
 @mixin --desktop {
   @media (min-width: $desktop) {
     @content;
