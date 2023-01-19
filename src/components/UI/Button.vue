@@ -83,6 +83,7 @@ export default defineComponent({
 
 .btn-outline {
   border: 1px solid currentColor;
+  background: #fff;
 
   &:hover,
   &:active {

@@ -33,26 +33,20 @@ export default defineComponent({
   <header class="app-header">
     <section class="app-header__container container">
       <div class="app-header__logo">
-        <a href="/" class="app-header__link">
-          <img src="/src/assets/icons/arrow-left.svg" alt="" />
-        </a>
-
         <img src="/src/assets/icons/logo.svg" alt="" />
-
-        <span>Новый год 2023</span>
       </div>
 
       <div class="app-header__controls">
         <AppButton
           text="Поддержать фонд"
           :href="VITE_SUPPORT_LINK"
-          :color="ButtonColors.Secondary"
+          :color="ButtonColors.Primary"
           :size="ButtonSizes.Small"
         />
         <AppButton
           text="Стать волонтером"
           :href="VITE_VOLUNTEERS_LINK"
-          :color="ButtonColors.Secondary"
+          :color="ButtonColors.Primary"
           :size="ButtonSizes.Small"
           :type="ButtonTypes.Outline"
         />
@@ -71,7 +65,6 @@ export default defineComponent({
 @import "@/assets/styles/breakpoints";
 .app-header {
   padding: 32px 0;
-  background-color: #fff;
 
   @include --tablet {
     padding: 24px 0;
@@ -83,16 +76,8 @@ export default defineComponent({
 
   &__container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-  }
-
-  &__link {
-    margin-right: 14px;
-
-    img {
-      width: 24px;
-      height: 24px;
-    }
   }
 
   &__logo {
@@ -100,17 +85,8 @@ export default defineComponent({
     align-items: center;
 
     > img {
-      width: 45px;
-      height: 33px;
-      margin-right: 16px;
-    }
-
-    span {
-      font-size: 20px;
-
-      @include --mobile {
-        font-size: 16px;
-      }
+      width: 183px;
+      height: 53px;
     }
   }
 

@@ -48,7 +48,7 @@ export default defineComponent({
     <section class="app-mobile-menu__panel" @click.stop>
       <header class="app-mobile-menu__header">
         <div class="app-mobile-menu__logo">
-          <img src="/src/assets/icons/logo.svg" alt="" />
+          <img src="/src/assets/icons/logo-small.svg" alt="" />
         </div>
 
         <div class="app-header__burger">
@@ -142,6 +142,7 @@ export default defineComponent({
     font-family: $font-menu;
     font-weight: 400;
     font-size: 28px;
+    letter-spacing: 3px;
 
     &:not(:last-child) {
       margin-bottom: 24px;
