@@ -37,7 +37,10 @@ export default defineComponent({
         <img src="/src/assets/icons/background/left-bottom-circle-mobile.svg" alt="" />
       </div>
       <div class="app-background__elements">
-        <img src="/src/assets/icons/background/elements-mobile.png" alt="" />
+        <picture>
+          <source srcset="/src/assets/icons/background/elements-mobile@2x.png" media="(min-width: 400px)" />
+          <img src="/src/assets/icons/background/elements-mobile.png" alt="" />
+        </picture>
       </div>
     </div>
   </header>
@@ -142,6 +145,7 @@ export default defineComponent({
       display: none;
     }
 
+    picture,
     img {
       width: 100%;
     }
