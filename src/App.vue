@@ -4,9 +4,10 @@ import { defineComponent } from "vue";
 import AppHeader from "@/components/Section/Header.vue";
 import AppBackground from "@/components/Section/Background.vue";
 import AppFirstSlide from "@/components/Section/FirstSlide.vue";
+import AppInfoSlide from "@/components/Section/InfoSlide.vue";
 
 export default defineComponent({
-  components: { AppFirstSlide, AppBackground, AppHeader },
+  components: { AppInfoSlide, AppFirstSlide, AppBackground, AppHeader },
   setup() {
     const { VITE_SUPPORT_LINK } = import.meta.env;
 
@@ -23,6 +24,12 @@ export default defineComponent({
     <AppBackground />
 
     <AppFirstSlide />
+
+    <AppInfoSlide
+      title="2017 — 2020"
+      subtitle="Системная работа и работа со сложными случаями и категориями подопечных"
+      text="<p>Волонтеры работают с выпускниками детских домов для детей с инвалидностью - молодыми людьми в ПНИ.</p><p>Открылась Школа приемных родителей и специальные модули, чтобы родители лучше понимали проблемы подростков, детей с ОВЗ. Мы впервые ищем семьи для временного размещения детей. Разработаны поправки в законодательство, чтобы не разделяли братьев и сестер и не переводили детей из одного учреждения в другое.</p>"
+    />
 
     <section class="container"></section>
   </div>
