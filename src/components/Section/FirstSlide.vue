@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <header class="first-slide container">
+  <section class="first-slide container">
     <div class="first-slide__content">
       <h1>19 лет</h1>
       <h2>нашему фонду!</h2>
@@ -29,7 +29,7 @@ export default defineComponent({
 
       <span>листайте</span>
     </div>
-  </header>
+  </section>
 </template>
 
 <style lang="scss">

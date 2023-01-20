@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <header class="info-slide container">
+  <section class="info-slide container">
     <div class="info-slide__content">
       <h2>{{ title }}</h2>
       <h3>{{ subtitle }}</h3>
@@ -32,7 +32,7 @@ export default defineComponent({
         <AppTextContent :text="text" />
       </div>
     </div>
-  </header>
+  </section>
 </template>
 
 <style lang="scss">

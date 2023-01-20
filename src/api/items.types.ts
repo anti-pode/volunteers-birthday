@@ -1,45 +1,35 @@
 export enum PopupTypes {
-  Promo,
+  Statistic,
   Story,
-  Personal,
 }
 
-export interface IPopup {
-  type: PopupTypes;
-  id: number;
+type StatisticItem = {
   title: string;
-}
-
-interface IPromoPopup extends IPopup {
-  type: PopupTypes.Promo;
-  gift: string;
-  code: string;
-  link: string;
-  description?: string;
-}
-
-interface IPersonalPopup extends IPopup {
-  type: PopupTypes.Personal;
-  image?: string | null;
   text: string;
-  author: string;
-  supportLink: string;
+};
+
+export interface IStatisticPopup {
+  type: PopupTypes.Statistic;
+  items: StatisticItem[];
 }
 
-interface IStoryPopup extends IPopup {
+export interface IStoryPopup {
   type: PopupTypes.Story;
-  tag: string;
+  title: string;
+  text: string;
   image?: string | null;
   video?: string | null;
-  text: string;
-  hasSocialBlock: boolean;
-  supportLink?: string | null;
-  shareUrl?: string | null;
 }
 
 export interface IItem {
-  id: number;
-  icon: string;
-  isActive: boolean;
-  popup: IPromoPopup | IStoryPopup | IPersonalPopup;
+  year: number;
+  text?: string | null;
+  popup?: IStatisticPopup | IStoryPopup | null;
+}
+
+export interface IInfo {
+  title: string;
+  subtitle: string;
+  text: string;
+  items: IItem[];
 }
