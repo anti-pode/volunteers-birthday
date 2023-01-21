@@ -114,11 +114,23 @@ export default defineComponent({
   &._statistic {
     background: #dfe7e2;
     cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover,
+    &:active {
+      background: #c2dfcd;
+    }
   }
 
   &._story {
     background: #dfe7e2;
     cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover,
+    &:active {
+      background: #c2dfcd;
+    }
   }
 
   &._text {
