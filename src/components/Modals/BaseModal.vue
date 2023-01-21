@@ -58,7 +58,7 @@ export default defineComponent({
   position: relative;
   width: 618px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 48px 32px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
@@ -66,7 +66,7 @@ export default defineComponent({
   @include --mobile {
     width: 90%;
     max-width: 600px;
-    padding: 16px;
+    padding: 28px 16px;
   }
 
   &__close {

@@ -3,7 +3,7 @@ export enum PopupTypes {
   Story,
 }
 
-type StatisticItem = {
+export type StatisticItem = {
   title: string;
   text: string;
 };

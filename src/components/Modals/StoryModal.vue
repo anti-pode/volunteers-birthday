@@ -3,16 +3,11 @@ import { defineComponent } from "vue";
 import AppButton from "@/components/UI/Button.vue";
 import AppTextContent from "@/components/UI/TextConent.vue";
 import AppSocials from "@/components/UI/Socials.vue";
-import AppShareButton from "@/components/UI/ShareButton.vue";
 
 export default defineComponent({
   name: "AppStoryModal",
-  components: { AppShareButton, AppSocials, AppTextContent, AppButton },
+  components: { AppSocials, AppTextContent, AppButton },
   props: {
-    tag: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       required: true,
@@ -29,25 +24,19 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    hasSocialBlock: {
-      type: Boolean,
-      default: false,
-    },
-    supportLink: {
-      type: String,
-      default: "",
-    },
-    shareUrl: {
-      type: String,
-      default: "",
-    },
+  },
+  setup() {
+    const { VITE_SUPPORT_LINK } = import.meta.env;
+
+    return {
+      VITE_SUPPORT_LINK,
+    };
   },
 });
 </script>
 
 <template>
   <article class="story-popup">
-    <p class="story-popup__tag">{{ tag }}</p>
     <h3 class="story-popup__title">{{ title }}</h3>
 
     <div v-if="image" class="story-popup__image">
@@ -66,9 +55,8 @@ export default defineComponent({
       <AppSocials />
     </section>
 
-    <div v-if="supportLink || shareUrl" class="story-popup__button">
-      <AppButton v-if="supportLink" text="Поддержать фонд" :href="supportLink" />
-      <AppShareButton v-else-if="shareUrl" :share-url="shareUrl" />
+    <div class="story-popup__button">
+      <AppButton text="Поддержать фонд" :href="VITE_SUPPORT_LINK" />
     </div>
   </article>
 </template>
@@ -93,6 +81,7 @@ export default defineComponent({
     font-weight: 600;
     font-size: 32px;
     line-height: 36px;
+    text-align: center;
 
     @include --mobile {
       font-size: 20px;
