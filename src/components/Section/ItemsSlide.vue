@@ -70,7 +70,7 @@ export default defineComponent({
 
   &__trigger-line {
     position: absolute;
-    bottom: 0;
+    top: 50vh;
     left: 0;
     width: 100%;
     height: 1px;
