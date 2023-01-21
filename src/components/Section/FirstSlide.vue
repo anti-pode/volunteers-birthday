@@ -29,6 +29,8 @@ export default defineComponent({
 
       <span>листайте</span>
     </div>
+
+    <div class="js-tree-change-line" data-slide="0"></div>
   </section>
 </template>
 

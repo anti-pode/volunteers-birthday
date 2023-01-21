@@ -1,6 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
+import mitt from "mitt";
 import "@/assets/styles/app.scss";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+const emitter = mitt();
+
+app.provide("emitter", emitter);
+app.mount("#app");

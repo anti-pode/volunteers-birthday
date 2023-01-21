@@ -12,6 +12,10 @@ export default defineComponent({
       type: Array as PropType<IItem[]>,
       required: true,
     },
+    slide: {
+      type: Number,
+      required: true,
+    },
   },
   setup(props) {
     const half = Math.ceil(props.items.length / 2);
@@ -41,6 +45,8 @@ export default defineComponent({
         <AppInfoBlock v-for="(item, index) in items" :key="index" v-bind="item" />
       </div>
     </div>
+
+    <div class="items-slide__trigger-line js-tree-change-line" :data-slide="slide"></div>
   </section>
 </template>
 
@@ -48,6 +54,7 @@ export default defineComponent({
 @import "@/assets/styles/breakpoints";
 
 .items-slide {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -60,6 +67,14 @@ export default defineComponent({
 
   @include --mobile {
     padding: 80px 0;
+  }
+
+  &__trigger-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
   }
 
   &__content {

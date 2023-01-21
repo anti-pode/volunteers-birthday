@@ -1,13 +1,25 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, inject, ref } from "vue";
 
 export default defineComponent({
   name: "AppBackground",
+  setup() {
+    const emitter = inject("emitter");
+    const slideIndex = ref(0);
+
+    (emitter as any).on("slide:update", (index: number) => {
+      slideIndex.value = index;
+    });
+
+    return {
+      slideIndex,
+    };
+  },
 });
 </script>
 
 <template>
-  <header class="app-background">
+  <section class="app-background">
     <div class="app-background__back">
       <div class="app-background__top-circle">
         <img src="/src/assets/icons/background/right-top-circle.svg" alt="" />
@@ -43,7 +55,16 @@ export default defineComponent({
         </picture>
       </div>
     </div>
-  </header>
+
+    <transition name="fade">
+      <div v-if="slideIndex > 0 && slideIndex < 7" :key="slideIndex" class="app-background__tree">
+        <picture>
+          <source :srcset="`/src/assets/images/trees/${slideIndex}-mobile.png`" media="(max-width: 767px)" />
+          <img :src="`/src/assets/images/trees/${slideIndex}.png`" alt="" />
+        </picture>
+      </div>
+    </transition>
+  </section>
 </template>
 
 <style lang="scss">
@@ -81,6 +102,14 @@ export default defineComponent({
     @include --mobile {
       display: none;
     }
+  }
+
+  &__tree {
+    position: fixed;
+    left: 50%;
+    bottom: 70px;
+    z-index: -1;
+    transform: translateX(-50%);
   }
 
   &__mobile {
@@ -149,6 +178,16 @@ export default defineComponent({
     img {
       width: 100%;
     }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 </style>

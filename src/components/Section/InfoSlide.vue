@@ -18,12 +18,18 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    slide: {
+      type: Number,
+      required: true,
+    },
   },
 });
 </script>
 
 <template>
   <section class="info-slide container">
+    <div class="info-slide__trigger-line js-tree-change-line" :data-slide="slide"></div>
+
     <div class="info-slide__content">
       <h2>{{ title }}</h2>
       <h3>{{ subtitle }}</h3>
@@ -48,6 +54,14 @@ export default defineComponent({
 
   @include --mobile {
     flex-direction: column;
+  }
+
+  &__trigger-line {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    height: 1px;
   }
 
   &__content {
