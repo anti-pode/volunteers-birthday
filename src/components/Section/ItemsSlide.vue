@@ -18,9 +18,8 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const half = Math.ceil(props.items.length / 2);
-    const leftItems = props.items.slice(0, half);
-    const rightItems = props.items.slice(half);
+    const leftItems = props.items.filter((item, index) => index % 2 === 0);
+    const rightItems = props.items.filter((item, index) => index % 2 !== 0);
 
     return {
       leftItems,
